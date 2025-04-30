@@ -48,5 +48,5 @@ function window(width, height, attribs) end
 
 --- Create a window or set its attributes
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#window)
---- @param attribs __WindowAttribs
+--- @param attribs? __WindowAttribs
 function window(attribs) end
