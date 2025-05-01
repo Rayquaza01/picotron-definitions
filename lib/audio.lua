@@ -1,12 +1,14 @@
 --- @meta
 
---- Play a sound effect (0 to 63) on a channel (0 to 15) from note offset (0 to 63 in notes) for length notes
+--- Plays a sound effect.
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#sfx)
---- @param n integer
---- @param channel? integer
---- @param offset? integer
---- @param length? integer
-function sfx(n, channel, offset, length) end
+--- @param n integer The index of the sound effect to play (0-63). -1 stops the sound effect on the channel. -2 stops the sound effect and clears the channel state.
+--- @param channel? integer The channel to play the sound effect on (0-15).
+--- @param offset? integer The offset in the sound effect to start playing from (0-63 in notes).
+--- @param length? integer The length of the sound effect to play in notes (0-63).
+--- @param pan? integer The panning of the sound effect (-128 to 127).
+--- @param mix_volume? integer The volume of the sound effect (0-255). Takes priority over the value at `0x553a`.
+function sfx(n, channel, offset, length, pan, mix_volume) end
 
 --- Plays music starting from pattern n.
 --- If n is -1, stop music
