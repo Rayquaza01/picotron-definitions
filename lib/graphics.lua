@@ -161,14 +161,30 @@ function rect(x0, y0, x1, y1, col) end
 --- @param col? integer
 function rectfill(x0, y0, x1, y1, col) end
 
---- Swap color c0 and c1
---- If p is 0, the draw palette will be re-mapped (default)
---- If p is 1, the whole screen will be re-mapped
+--- Remaps one color index to produce another.
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#pal)
---- @param c0 integer
---- @param c1 integer
---- @param p? 0 | 1
+--- @param c0 integer The index to remap.
+--- @param c1 integer The index to map c0 to.
+--- @param p? 0 | 1 0 to swap during drawing, 1 to swap the entire screen. Defaults to 0.
 function pal(c0, c1, p) end
+
+--- Sets the ARGB color value for the given color index.
+--- [View Online](https://www.lexaloffle.com/dl/docs/picotron_gfx_pipeline.html#Display_Palettes)
+--- @param c0 integer The index to change the color of.
+--- @param argb integer The ARGB color value to set as a 32-bit integer, with the alpha channel in the highest byte.
+--- @param p 2
+function pal(c0, argb, p) end
+
+--- Resets the color tables back to their defaults.
+--- @param p 0
+function pal(p) end
+
+--- Resets the indexed display palettes back to their defaults.
+--- @param p 1
+function pal(p) end
+
+--- Resets all palettes and color tables back to their defaults.
+function pal() end
 
 --- Set the transparency of a color
 --- [View Online](https://www.lexaloffle.com/dl/docs/picotron_manual.html#palt)
